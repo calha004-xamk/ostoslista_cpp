@@ -3,17 +3,30 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <cstdlib>
 
 using namespace std;
 
+    // Näyttö tyhjennetään edellisistä listoista. Tätä kutsutaan koodissa.
+void clearScreen() {
+#ifdef _WIN32
+    system("cls");
+#else
+    system("clear");
+#endif
+}
+
+    // Näyttää ostoslistan tuotteet ja numeroinnit listana
 void naytaOstoslista(std::string ostosLista[100], int tuoteMaara) {
+    clearScreen();
 
     std::cout << "Ostoslista:" << std::endl;
     for (int i = 0; i < tuoteMaara; i++) {
-        std::cout << "Tuote " << i + 1 << ": " << ostosLista[i] << std::endl;
+        std::cout << "Tuote " << i << ": " << ostosLista[i] << std::endl;
     }
 }
 
+    // Tallennetaan ostoslista.txt tiedostoon listan ostokset ja virheentarkistukset tapauksissa jolloin tiedostoon ei voida tallentaa.
 void tallennaOstoslista(std::string ostosLista[100], int tuoteMaara) {
     ofstream tiedosto("ostoslista.txt");
 
@@ -28,6 +41,7 @@ void tallennaOstoslista(std::string ostosLista[100], int tuoteMaara) {
     }
 }
 
+    // ostoslista.txt tiedostoon tallennetut ostokset ladataan. Jos tiedostoa ei ole niin tulee ilmoitus että tiedosto on luotu.
 void lataaOstoslista(std::string ostosLista[100], int &tuoteMaara) {
     ifstream tiedosto("ostoslista.txt");
 
@@ -43,6 +57,10 @@ void lataaOstoslista(std::string ostosLista[100], int &tuoteMaara) {
     }
 }
 
+    /* Pää ostosovellus johon on määritetty listan ulkonäkö ja toiminnot. Lista pyörii while loopilla.
+     * Switch erilaisille valinnoille ja jokainen case suorittaa eri toiminnot sovelluksessa esim.
+     tiedostojen lisäys */
+
 int ostosSovellus() {
 
     std::string ostosLista[100];
@@ -51,6 +69,7 @@ int ostosSovellus() {
 
     lataaOstoslista(ostosLista, tuoteMaara);
 
+    clearScreen();
     while (valinta != 0) {
         std::cout << "--- Ostoslista ---" << std::endl;
         std::cout << "1 - Lisaa Tuote -" << std::endl;
