@@ -11,4 +11,4 @@
  Sovellus tallentaa ostoslista.txt -tiedoston build kansioon joka luodaan ensimmäisen käyttökerran yhteydessä.
  ostoslista.txt -tiedostossa on kaikki lisätyt/tallennetut ostokset.
  Sovelluksella voidaan muokata tätä tiedostoa ostoslistana.
-
+(En ollut varma minne tekstitiedosto kannattaisi tallentaa. Tekstitiedosto toimii mielestäni hyvin ostosten tallennukseen sillä sen voi kuka tahansa nähdä tai muokata, ohjelma lukee myös muutokset.
