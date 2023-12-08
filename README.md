@@ -16,3 +16,5 @@
 (En ollut varma minne tekstitiedosto kannattaisi tallentaa, mutta se toimii näin tähän tarkoitukseen. 
 Tekstitiedosto on mielestäni riittävä ostosten tallennukseen sillä ostoslistan voi kuka tahansa nähdä tai sitä muokata,
 ohjelma lukee myös tiedostoon kirjoitetut muutokset.)
+
+-Aleksi H.
