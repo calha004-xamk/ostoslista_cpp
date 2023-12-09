@@ -16,7 +16,7 @@ void clearScreen() {
 #endif
 }
 
-    // Näyttää ostoslistan tuotteet ja numeroinnit listana
+    // Näyttää ostoslistan tuotteet ja numeroinnin kun sitä kutsutaan case 2.
 void naytaOstoslista(std::string ostosLista[100], int tuoteMaara) {
     clearScreen();
 
@@ -26,7 +26,7 @@ void naytaOstoslista(std::string ostosLista[100], int tuoteMaara) {
     }
 }
 
-    // Tallennetaan ostoslista.txt tiedostoon listan ostokset ja virheentarkistukset tapauksissa jolloin tiedostoon ei voida tallentaa.
+    // Tallennetaan ostoslista.txt tiedostoon listan ostokset ja virheentarkistus tapauksissa jolloin tiedostoon ei voida tallentaa.
 void tallennaOstoslista(std::string ostosLista[100], int tuoteMaara) {
     ofstream tiedosto("ostoslista.txt");
 
@@ -60,6 +60,7 @@ void lataaOstoslista(std::string ostosLista[100], int &tuoteMaara) {
     /* Pää ostosovellus johon on määritetty listan ulkonäkö ja toiminnot. Lista pyörii while loopilla.
      * Switch erilaisille valinnoille ja jokainen case suorittaa eri toiminnot sovelluksessa esim.
      tiedostojen lisäys */
+    // ostoSovelluksessa on 100 ostoksen array ja alkuarvo case valinnalle -1. Tuotemäärä on aluksi 0.
 
 int ostosSovellus() {
 
