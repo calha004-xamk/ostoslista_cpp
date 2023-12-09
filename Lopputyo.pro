@@ -5,10 +5,12 @@ CONFIG -= qt
 
 SOURCES += \
         main.cpp \
-        ostossovellus.cpp
+        ostossovellus.cpp \
+        tiedostohallinta.cpp
 
 HEADERS += \
-    ostossovellus.h
+    ostossovellus.h \
+    tiedostohallinta.h
 
 DISTFILES += \
     ostoslista.txt
