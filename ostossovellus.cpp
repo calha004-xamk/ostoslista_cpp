@@ -22,7 +22,6 @@ void clearScreen()
 void naytaOstoslista(std::string ostosLista[100], int tuoteMaara)
 {
     clearScreen();
-
     std::cout << "Ostoslista:" << std::endl;
     for (int i = 0; i < tuoteMaara; i++) {
         std::cout << "Tuote " << i << ": " << ostosLista[i] << std::endl;
@@ -77,13 +76,10 @@ int ostosSovellus()
         case 3: {
             naytaOstoslista(ostosLista, tuoteMaara);
             int poista_ostos = 0;
+            std::cout << "\n" << std::endl;
             cout << "Poista Ostos:";
             cin >> poista_ostos;
 
-            if (tuoteMaara < 1) {
-                cout << "Ei Ostoksia";
-                break;
-            }
             for (int i = poista_ostos; i < tuoteMaara; i++) {
                 ostosLista[i] = ostosLista[i + 1];
             }
@@ -104,6 +100,7 @@ int ostosSovellus()
         case 0: {
             tallennaOstoslista(ostosLista, tuoteMaara);
             cout << "Ohjelma suljetaan" << endl;
+            std::cout << "\n" << std::endl;
             break;
         }
         }
